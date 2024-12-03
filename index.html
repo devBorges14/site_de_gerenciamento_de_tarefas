@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+    <form action="/add" method="post">
+        <input type="text" name="task" placeholder="Nova tarefa" required>
+        <button type="submit">Adicionar</button>
+    </form>
+    <ul>
+        {% for id, task in tasks %}
+            <li>
+                {{ task }}
+                <a href="/delete/{{ id }}">Remover</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
