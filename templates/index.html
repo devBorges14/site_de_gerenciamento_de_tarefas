@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<center>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Tarefas</title>
+    </head>
+    <body>
+        <h1>Lista de Tarefas</h1>
+        <form action="/add" method="post">
+            <input type="text" name="task" placeholder="Nova tarefa" required>
+            <button type="submit">Adicionar</button>
+        </form>
+        <ul>
+            {% for id, task, risk in tasks %}
+                <li class="{% if risk %}completed{% endif %}">
+                    {{ task }}
+                    <a href="/risk/{{ id }}">Concluída</a> | <a href="/delete/{{ id }}">Remover</a>
+                </li>
+            {% endfor %}
+        </ul>
+        
+        <form action="/completed">
+            <button type="submit" url_for="completed">Ver Tarefas Concluídas</button>
+        </form>
+
+        <form action="/delete_all" method='post'>
+            <button type="submit">Limpar Tarefas</button>
+        </form>
+    </body>
+    </html>
+    </ul>
+        
+        <style>.completed {
+            text-decoration: line-through;
+            color: rgb(0, 0, 0);
+        }
+        </style>
+</center>
