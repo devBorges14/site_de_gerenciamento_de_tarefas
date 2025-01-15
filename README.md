@@ -16,8 +16,6 @@ Com foco em simplicidade e usabilidade, este aplicativo foi criado para proporci
 
 3) Use um ambiente virtual:
 ````Crie um ambiente virtual para gerenciar dependências e evitar problemas de configuração:
-bash
-Copiar código
 python -m venv venv
 source venv/bin/activate   # No Windows: venv\Scripts\activate
 
