@@ -18,4 +18,11 @@ Com foco em simplicidade e usabilidade, este aplicativo foi criado para proporci
 ````Crie um ambiente virtual para gerenciar dependências e evitar problemas de configuração:
 python -m venv venv
 source venv/bin/activate   # No Windows: venv\Scripts\activate
+````
+# Como Rodar 
+1. Clone o repositório:
+  git clone https://github.com/devBorges14/site_de_gerenciamento_de_tarefas
+2. Instale os prés requisitos
+3. Execute o programa:
+   ````bash python app.py````
 
