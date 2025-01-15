@@ -13,3 +13,4 @@ Com foco em simplicidade e usabilidade, este aplicativo foi criado para proporci
 
 2) Instale a bibloteca Flask
    pip install flask
+
