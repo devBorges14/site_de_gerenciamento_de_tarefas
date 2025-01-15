@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<center>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarefas Concluídas</title>
+    </head>
+    <body>
+        <h1>Tarefas Concluídas</h1>
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    <span style="text-decoration: line-through;">{{ task.task }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <form action="/">
+            <button type="submit" url_for="/">Ver Tarefas Pendentes</button>
+        </form>
+
+    </body>
+    </html>
+</center>
