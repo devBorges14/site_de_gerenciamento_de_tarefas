@@ -3,4 +3,4 @@ Este é um aplicativo web intuitivo e eficiente, projetado para facilitar o gere
 Com foco em simplicidade e usabilidade, este aplicativo foi criado para proporcionar uma maneira ágil e organizada de gerenciar suas atividades diárias, ajudando os usuários a manterem o foco e aumentarem sua produtividade.
 
 # PRÉ REQUISTOS
-# Instale # a biblioteca SQLITE3 para # FUNCIONAMENTO DO CÓDIGO #
+Instale a biblioteca SQLITE3 para FUNCIONAMENTO DO CÓDIGO 
