@@ -12,6 +12,12 @@ Com foco em simplicidade e usabilidade, este aplicativo foi criado para proporci
 ![image](https://github.com/user-attachments/assets/0ded5cf5-4d7d-4fe6-96ca-42eee8fce90e)
 
 2) Instale a bibloteca Flask
-```bash ```
-pip install flask
+```bash pip install flask```
+
+3) Use um ambiente virtual:
+````Crie um ambiente virtual para gerenciar dependências e evitar problemas de configuração:
+bash
+Copiar código
+python -m venv venv
+source venv/bin/activate   # No Windows: venv\Scripts\activate
 
