@@ -1,40 +1,150 @@
 <!DOCTYPE html>
-<center>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lista de Tarefas</title>
-    </head>
-    <body>
-        <h1>Lista de Tarefas</h1>
-        <form action="/add" method="post">
-            <input type="text" name="task" placeholder="Nova tarefa" required>
-            <button type="submit">Adicionar</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        body {
+            font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f5f5f5, #eaeaea);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #444;
+            font-size: 2.5em;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: calc(100% - 50px);
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            margin-right: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #0078ff;
+            box-shadow: 0 4px 10px rgba(0, 120, 255, 0.2);
+        }
+
+        .button {
+            background: linear-gradient(45deg, #0078ff, #00c6ff);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li.completed {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+        a {
+            color: #0078ff;
+            text-decoration: none;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            background: #222;
+            color: white;
+            padding: 25px;
+            margin-top: auto;
+            width: 100%;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer a {
+            color: #00c6ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+    <div class="container">
+        <form action="/add" method="post" style="display: flex; justify-content: center; gap: 10px;">
+            <input class="input-field" type="text" name="task" placeholder="Nova tarefa" required>
+            <button class="button" type="submit">Adicionar</button>
         </form>
         <ul>
             {% for id, task, risk in tasks %}
                 <li class="{% if risk %}completed{% endif %}">
                     {{ task }}
-                    <a href="/risk/{{ id }}">Concluída</a> | <a href="/delete/{{ id }}">Remover</a>
+                    <div>
+                        <a href="/risk/{{ id }}">Concluída</a>
+                        <a href="/delete/{{ id }}">Remover</a>
+                    </div>
                 </li>
             {% endfor %}
         </ul>
-        
-        <form action="/completed">
-            <button type="submit" url_for="completed">Ver Tarefas Concluídas</button>
+        <form action="/completed" method="get" style="margin: 10px 0;">
+            <button class="button" type="submit">Ver Tarefas Concluídas</button>
         </form>
-
-        <form action="/delete_all" method='post'>
-            <button type="submit">Limpar Tarefas</button>
+        <form action="/delete_all" method="post">
+            <button class="button" style="background: linear-gradient(45deg, #ff0000, #ff4d4d);" type="submit">Limpar Tarefas</button>
         </form>
-    </body>
-    </html>
-    </ul>
-        
-        <style>.completed {
-            text-decoration: line-through;
-            color: rgb(0, 0, 0);
-        }
-        </style>
-</center>
+    </div>
+    <div class="footer">
+        <p>Desenvolvido por Gabriel. <a href="https://github.com/devBorges14">Saiba mais</a></p>
+    </div>
+</body>
+</html>
